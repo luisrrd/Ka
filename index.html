@@ -18,9 +18,10 @@ body {
 
 .container {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     padding: 60px 20px;
 }
+
 
 h1 {
     font-size: 2.2em;
@@ -48,12 +49,14 @@ button:active {
 }
 
 .food {
-    position: absolute;
+    position: fixed;
     width: 70px;
     pointer-events: none;
     animation: float linear forwards;
     filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.3));
+    z-index: 1;
 }
+
 
 @keyframes float {
     0% {
@@ -108,3 +111,4 @@ button:active {
 let intervalo = null;
 
 const imagen
+
