@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Ka 🍕💖</title>
+<title>Para Karen 🍕💖</title>
 
 <style>
 body {
@@ -18,10 +18,9 @@ body {
 
 .container {
     position: relative;
-    z-index: 5;
+    z-index: 2;
     padding: 60px 20px;
 }
-
 
 h1 {
     font-size: 2.2em;
@@ -49,14 +48,12 @@ button:active {
 }
 
 .food {
-    position: fixed;
+    position: absolute;
     width: 70px;
     pointer-events: none;
     animation: float linear forwards;
     filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.3));
-    z-index: 1;
 }
-
 
 @keyframes float {
     0% {
@@ -89,7 +86,7 @@ button:active {
 <body>
 
 <div class="container">
-    <h1>Feliz Día del Amor, Ka 🍔💖</h1>
+    <h1>Feliz Día del Amor, Karen 🍔💖</h1>
 
     <p>
         Dicen que los antojos no tienen horario… 
@@ -110,5 +107,36 @@ button:active {
 
 let intervalo = null;
 
-const imagen
+const imagenes = [
+    "https://cdn-icons-png.flaticon.com/512/3075/3075977.png", // hamburguesa
+    "https://cdn-icons-png.flaticon.com/512/1046/1046784.png", // pizza
+    "https://cdn-icons-png.flaticon.com/512/5787/5787100.png", // papas
+    "https://cdn-icons-png.flaticon.com/512/3595/3595455.png", // alitas
+    "https://cdn-icons-png.flaticon.com/512/1046/1046874.png"  // helado
+];
 
+function crearComida() {
+    const img = document.createElement("img");
+    img.classList.add("food");
+
+    img.src = imagenes[Math.floor(Math.random() * imagenes.length)];
+    img.style.left = Math.random() * 100 + "vw";
+    img.style.animationDuration = (Math.random() * 3 + 4) + "s";
+
+    document.body.appendChild(img);
+
+    setTimeout(() => {
+        img.remove();
+    }, 7000);
+}
+
+function activarMagia() {
+    if (!intervalo) {
+        intervalo = setInterval(crearComida, 600);
+    }
+}
+
+</script>
+
+</body>
+</html>
