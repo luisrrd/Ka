@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Karen 🍕💖</title>
+<title>Para Ka 💖</title>
 
 <style>
 body {
@@ -19,40 +19,41 @@ body {
 .container {
     position: relative;
     z-index: 2;
-    padding: 60px 20px;
+    padding-top: 100px;
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: 3em;
 }
 
 p {
-    font-size: 1.1em;
-    max-width: 600px;
-    margin: 15px auto;
+    font-size: 1.3em;
+    max-width: 700px;
+    margin: 20px auto;
 }
 
 button {
-    padding: 14px 25px;
+    padding: 15px 30px;
     border: none;
     border-radius: 30px;
-    font-size: 1em;
+    font-size: 1.1em;
     background: white;
     color: #ff4e8b;
     cursor: pointer;
     transition: 0.3s;
 }
 
-button:active {
-    transform: scale(0.95);
+button:hover {
+    transform: scale(1.1);
+    background: #ff4e8b;
+    color: white;
 }
 
 .food {
     position: absolute;
-    width: 70px;
+    width: 100px;
     pointer-events: none;
     animation: float linear forwards;
-    filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.3));
 }
 
 @keyframes float {
@@ -65,28 +66,13 @@ button:active {
         opacity: 0;
     }
 }
-
-/* Ajustes extra para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    .food {
-        width: 55px;
-    }
-}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>Feliz Día del Amor, Karen 🍔💖</h1>
+    <h1>Feliz Día del Amor y la Amistad, Ka 🍭💖</h1>
 
     <p>
         Dicen que los antojos no tienen horario… 
@@ -107,12 +93,13 @@ button:active {
 
 let intervalo = null;
 
+// IMÁGENES TIPO DIBUJO / STICKER
 const imagenes = [
-    "https://cdn-icons-png.flaticon.com/512/3075/3075977.png", // hamburguesa
-    "https://cdn-icons-png.flaticon.com/512/1046/1046784.png", // pizza
-    "https://cdn-icons-png.flaticon.com/512/5787/5787100.png", // papas
-    "https://cdn-icons-png.flaticon.com/512/3595/3595455.png", // alitas
-    "https://cdn-icons-png.flaticon.com/512/1046/1046874.png"  // helado
+    "https://cdn-icons-png.flaticon.com/512/3075/3075977.png", // hamburguesa cartoon
+    "https://cdn-icons-png.flaticon.com/512/1046/1046784.png", // pizza cartoon
+    "https://cdn-icons-png.flaticon.com/512/5787/5787100.png", // papas cartoon
+    "https://cdn-icons-png.flaticon.com/512/685/685352.png",   // dona cartoon
+    "https://cdn-icons-png.flaticon.com/512/415/415733.png"    // chocolate cartoon
 ];
 
 function crearComida() {
@@ -121,18 +108,18 @@ function crearComida() {
 
     img.src = imagenes[Math.floor(Math.random() * imagenes.length)];
     img.style.left = Math.random() * 100 + "vw";
-    img.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    img.style.animationDuration = (Math.random() * 4 + 5) + "s";
 
     document.body.appendChild(img);
 
     setTimeout(() => {
         img.remove();
-    }, 7000);
+    }, 9000);
 }
 
 function activarMagia() {
     if (!intervalo) {
-        intervalo = setInterval(crearComida, 600);
+        intervalo = setInterval(crearComida, 400);
     }
 }
 
