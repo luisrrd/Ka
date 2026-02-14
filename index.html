@@ -3,58 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Ka 🍟💖</title>
+<title>Para Ka 🍕💖</title>
 
 <style>
 body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    background: linear-gradient(135deg, #ff9a9e, #ff6a88);
     overflow: hidden;
-    color: white;
     text-align: center;
+    color: white;
 }
 
 .container {
     position: relative;
     z-index: 2;
-    padding-top: 100px;
+    padding: 60px 20px;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.2em;
 }
 
 p {
-    font-size: 1.3em;
-    max-width: 700px;
-    margin: 20px auto;
-    line-height: 1.6em;
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 15px auto;
 }
 
 button {
-    padding: 15px 30px;
+    padding: 14px 25px;
     border: none;
     border-radius: 30px;
-    font-size: 1.1em;
+    font-size: 1em;
     background: white;
     color: #ff4e8b;
     cursor: pointer;
     transition: 0.3s;
 }
 
-button:hover {
-    transform: scale(1.1);
-    background: #ff4e8b;
-    color: white;
+button:active {
+    transform: scale(0.95);
 }
 
 .food {
     position: absolute;
-    width: 90px;
+    width: 70px;
     pointer-events: none;
     animation: float linear forwards;
+    filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.3));
 }
 
 @keyframes float {
@@ -67,68 +65,46 @@ button:hover {
         opacity: 0;
     }
 }
+
+/* Ajustes extra para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .food {
+        width: 55px;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>Feliz Día del Amor y la Amistad, Ka 🍔💖</h1>
+    <h1>Feliz Día del Amor, Ka 🍔💖</h1>
 
     <p>
-        Dicen que los antojos no tienen horario…  
-        y tu eres un gran regalo en cualquier horario
+        Dicen que los antojos no tienen horario… 
+		y tu eres un gran regalo en cualquier horario
     </p>
 
     <p>
-        Como una pizza o alistas a las 11 de la noche,  
-        como unas papitas que desaparecen cuando miro hacia otro lado,
-	    como mi sandwich con un mordisco a medias 
-        como un cantones en medio parque…
-        así eres tú en mi vida. Especial y hermosa
+        Como una pizza o alistas a las 11 de la noche, 
+		como unas papitas que desaparecen cuando miro hacia otro lado, 
+		como mi sandwich con un mordisco a medias 
+		como un cantones en medio parque… así eres tú en mi vida. Especial y hermosa
     </p>
 
-    <button onclick="activarMagia()">Descubre tu antojo 💌</button>
+    <button onclick="activarMagia()">Activa el antojo 💌</button>
 </div>
 
 <script>
 
 let intervalo = null;
 
-// IMÁGENES
-const imagenes = [
-    "https://cdn-icons-png.flaticon.com/512/3075/3075977.png", // hamburguesa
-    "https://cdn-icons-png.flaticon.com/512/1046/1046784.png", // pizza
-    "https://cdn-icons-png.flaticon.com/512/5787/5787100.png", // papas fritas
-    "https://cdn-icons-png.flaticon.com/512/3595/3595455.png", // alitas
-    "https://cdn-icons-png.flaticon.com/512/1046/1046874.png"    // helado
-];
-
-function crearComida() {
-    const img = document.createElement("img");
-    img.classList.add("food");
-
-    img.src = imagenes[Math.floor(Math.random() * imagenes.length)];
-    img.style.left = Math.random() * 100 + "vw";
-    img.style.animationDuration = (Math.random() * 4 + 5) + "s";
-
-    document.body.appendChild(img);
-
-    setTimeout(() => {
-        img.remove();
-    }, 9000);
-}
-
-function activarMagia() {
-    if (!intervalo) {
-        intervalo = setInterval(crearComida, 400);
-    }
-}
-</script>
-
-</body>
-</html>
-
-
-
-
+const imagen
